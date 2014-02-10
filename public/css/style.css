@@ -1,0 +1,29 @@
+html
+{
+	width:810px;
+	overflow:hidden;
+	margin:auto;
+}
+body
+{
+	
+}
+.wrapper
+{
+	position:relative;	
+	display:none;
+}
+.main
+{
+	height:1200px;
+	width:810px;
+}
+.hidden
+{
+	display:none;
+}
+.button
+{
+	cursor:pointer;
+	position:absolute;
+}

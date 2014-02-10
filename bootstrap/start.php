@@ -26,7 +26,7 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-	'testing' => array('your-machine-name'),
+	'berlin01' => array('berlin01'),
 
 ));
 

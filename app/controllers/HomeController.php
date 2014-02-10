@@ -10,7 +10,7 @@ class HomeController extends BaseController
 		return method_exists($this, $this->action) ? $this->{$this->action}() : $this->welcome();
 	}
 
-	pprivate function like()
+	private function like()
 	{
 		return View::make('home.like', array('footer' => $this->footer()));
 	}

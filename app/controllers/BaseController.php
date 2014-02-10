@@ -11,7 +11,7 @@ class BaseController extends Controller
 
 	public function __construct()
 	{
-		$this->facebook      = new Facebook(array('appId' => Config::get('facebook.app_id'), 'secret' => Config::get('facebook.secret')));
+		$this->facebook      = new Facebook(array('appId' => Config::get('facebook.appId'), 'secret' => Config::get('facebook.appSecret')));
 		$this->signedRequest = $this->facebook->getSignedRequest();
 		$this->userId        = (isset($this->signedRequest['user_id']) && !empty($this->signedRequest['user_id'])) ? $this->signedRequest['user_id'] : Input::get('userId');
 		$this->pageId        = (isset($this->signedRequest['page']) && isset($this->signedRequest['page']['id'])) ? $this->signedRequest['page']['id'] : NULL;

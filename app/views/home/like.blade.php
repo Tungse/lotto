@@ -11,29 +11,29 @@
 		<!--[if lt IE 9]>
 			<link rel="stylesheet" type="text/css" href="css/ie.css" />		
 		<![endif]-->
-		<script language="Javascript" type="text/Javascript" src="js/library/jquery.js"></script>
 		<script>
-			var appId = "<?php echo Config::get('facebook.app_id'); ?>";
+			var appId = "<?php echo Config::get('facebook.appId'); ?>";
 		</script>
+		<script language="Javascript" type="text/Javascript" src="js/library/jquery.js"></script>
 		<script language="Javascript" type="text/Javascript" src="js/index.js"></script>
 		<script language="Javascript" type="text/Javascript" src="js/home/like.js"></script>
 	</head>
 	<body>
 		<div class="wrapper">
 			<div class="main like">
-
+				like
 			</div>
 		</div>
+		<div id="fb-root"></div>
+		<script>
+			(function(d, s, id)
+			{
+		    	var js, fjs = d.getElementsByTagName(s)[0];
+		     	if (d.getElementById(id)) {return;}
+		     	js = d.createElement(s); js.id = id;
+		     	js.src = "//connect.facebook.net/en_EN/all.js";
+		     	fjs.parentNode.insertBefore(js, fjs);
+		   	}(document, 'script', 'facebook-jssdk'));
+		</script>
 	</body>
-	<div id="fb-root"></div>
-	<script>
-		(function(d, s, id)
-		{
-	    	var js, fjs = d.getElementsByTagName(s)[0];
-	     	if (d.getElementById(id)) {return;}
-	     	js = d.createElement(s); js.id = id;
-	     	js.src = "//connect.facebook.net/de_DE/all.js";
-	     	fjs.parentNode.insertBefore(js, fjs);
-	   	}(document, 'script', 'facebook-jssdk'));
-	</script>
 </html>
