@@ -12,3 +12,4 @@
 */
 
 Route::any('/', 'HomeController@index');
+Route::any('home', 'HomeController@index');

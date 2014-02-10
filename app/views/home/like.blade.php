@@ -8,9 +8,7 @@
 		<title>like</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link rel="stylesheet" type="text/css" href="css/home/like.css" />
-		<!--[if lt IE 9]>
-			<link rel="stylesheet" type="text/css" href="css/ie.css" />		
-		<![endif]-->
+		<!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="css/ie.css" /><![endif]-->
 		<script>
 			var appId = "<?php echo Config::get('facebook.appId'); ?>";
 		</script>
