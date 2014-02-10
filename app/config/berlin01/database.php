@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'default',
+			'database'  => 'tung_test',
 			'username'  => 'root',
 			'password'  => 'kellerwg',
 			'charset'   => 'utf8',

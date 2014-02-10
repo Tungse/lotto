@@ -4,8 +4,9 @@ class HomeController extends BaseController
 {
 	public function index()
 	{
-		$liked        = (isset($this->signedRequest['page']) && isset($this->signedRequest['page']['liked'])) ? (bool)$this->signedRequest['page']['liked'] : true;	
-		$this->action = ($liked == false) ? 'like' : $this->action;
+		$this->action = ($this->liked == false) ? 'like' : $this->action;
+		
+		View::share('userId', $this->userId);
 
 		return method_exists($this, $this->action) ? $this->{$this->action}() : $this->welcome();
 	}
