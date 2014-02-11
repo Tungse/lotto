@@ -4,16 +4,16 @@ class HomeController extends BaseController
 {
 	public function index()
 	{
-		$this->action = ($this->liked == false) ? 'like' : $this->action;
+		$this->action = ($this->liked == false) ? 'fangate' : $this->action;
 		
 		View::share('userId', $this->userId);
 
 		return method_exists($this, $this->action) ? $this->{$this->action}() : $this->welcome();
 	}
 
-	private function like()
+	private function fangate()
 	{
-		return View::make('home.like', array('footer' => $this->footer()));
+		return View::make('home.fangate', array('footer' => $this->footer()));
 	}
 
 	private function welcome()
