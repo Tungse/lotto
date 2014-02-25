@@ -12,7 +12,7 @@
     	<meta property="og:description" content="<?php echo Lang::get('content.shareText'); ?>" />
     	<meta property="og:image" content="https://<?php echo Config::get('facebook.hostname').Config::get('facebook.dirname'); ?>/img/icon-share.jpg" />
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		<link rel="stylesheet" type="text/css" href="css/home/welcome.css" />
+		<link rel="stylesheet" type="text/css" href="css/index/welcome.css" />
 		<!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="css/ie.css" /><![endif]-->
 		<script>
 			var appId   = "<?php echo Config::get('facebook.appId'); ?>";
@@ -22,12 +22,12 @@
 			var canvas  = "<?php echo $canvas; ?>";
 		</script>
 		<script language="Javascript" type="text/Javascript" src="js/library/jquery.js"></script>
-		<script language="Javascript" type="text/Javascript" src="js/index.js"></script>
-		<script language="Javascript" type="text/Javascript" src="js/home/welcome.js"></script>
+		<script language="Javascript" type="text/Javascript" src="js/common.js"></script>
+		<script language="Javascript" type="text/Javascript" src="js/index/welcome.js"></script>
 	</head>
 	<body>
 		<div class="wrapper">
-			welcome
+			
 		</div>
 		<div class="hidden"></div>
 		<div id="fb-root"></div>

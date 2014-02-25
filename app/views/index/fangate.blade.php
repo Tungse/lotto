@@ -7,14 +7,14 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>fangate</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		<link rel="stylesheet" type="text/css" href="css/home/fangate.css" />
+		<link rel="stylesheet" type="text/css" href="css/index/fangate.css" />
 		<!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="css/ie.css" /><![endif]-->
 		<script>
 			var appId = "<?php echo Config::get('facebook.appId'); ?>";
 		</script>
 		<script language="Javascript" type="text/Javascript" src="js/library/jquery.js"></script>
-		<script language="Javascript" type="text/Javascript" src="js/index.js"></script>
-		<script language="Javascript" type="text/Javascript" src="js/home/fangate.js"></script>
+		<script language="Javascript" type="text/Javascript" src="js/common.js"></script>
+		<script language="Javascript" type="text/Javascript" src="js/index/fangate.js"></script>
 	</head>
 	<body>
 		<div class="wrapper">

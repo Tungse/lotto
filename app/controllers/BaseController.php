@@ -1,32 +1,27 @@
 <?php
 
+require_once('../vendor/devicedetection/devicedetection.php');
+
 class BaseController extends Controller 
 {
 	protected $action;
 	protected $facebook;
 	protected $signedRequest;
-	protected $userId;
 	protected $pageId;
-	protected $appData;
-	protected $liked;
+	protected $device;
 
 	public function __construct()
 	{
 		$this->action        = Input::get('a'); 
 		$this->facebook      = new Facebook(array('appId' => Config::get('facebook.appId'), 'secret' => Config::get('facebook.appSecret')));
 		$this->signedRequest = $this->facebook->getSignedRequest();
-		$this->userId        = (isset($this->signedRequest['user_id']) && !empty($this->signedRequest['user_id'])) ? $this->signedRequest['user_id'] : Input::get('userId');
-		$this->pageId        = (isset($this->signedRequest['page']) && isset($this->signedRequest['page']['id'])) ? $this->signedRequest['page']['id'] : NULL;
-		$this->liked         = (isset($this->signedRequest['page']) && isset($this->signedRequest['page']['liked'])) ? (bool)$this->signedRequest['page']['liked'] : true;	
-		$this->appData       = (isset($this->signedRequest['app_data'])) ? explode('?', $this->signedRequest['app_data']) : NULL;
-		$this->appData       = (isset($this->appData[0])) ? json_decode($this->appData[0]) : new stdClass();
-	}
-	
-	protected function setupLayout()
-	{
-		if ( ! is_null($this->layout))
+		$this->pageId        = (isset($this->signedRequest['page']) && isset($this->signedRequest['page']['id'])) ? $this->signedRequest['page']['id'] : Input::get('pageId');
+		
+		try
 		{
-			$this->layout = View::make($this->layout);
+			$detect       = new Mobile_Detect;
+			$this->divice = ($detect->isMobile()) ? 'mobile' : 'desktop';
 		}
+		catch(Exception $e) {}
 	}
 }

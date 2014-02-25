@@ -11,5 +11,5 @@
 |
 */
 
-Route::any('/', 'HomeController@index');
-Route::any('home', 'HomeController@index');
+Route::any('/', 'IndexController@actionController');
+Route::any('index', 'IndexController@actionController');

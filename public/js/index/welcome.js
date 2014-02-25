@@ -21,5 +21,5 @@ window.fbAsyncInit = function()
 
 $(function()
 {
-	//if(canvas == true) window.top.location.href = appUrl; 
+
 });
