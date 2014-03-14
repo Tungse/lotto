@@ -2,13 +2,13 @@
 
 return array
 (
-	'appId' 	=> '236005876495095',
-	'appSecret'	=> '90abe678ae78c24b6558a26867e0dfab',
-	'hostname'  => $_SERVER['HTTP_HOST'],
-	'dirname'   => dirname($_SERVER['PHP_SELF']).'/',
-	'appUrl'    => 'http://www.facebook.com/tungse/app_236005876495095?',
-	'canvas' 	=> 'https://apps.facebook.com/tungsedefault',
-	'pageId'	=> '131592306961101',
-	'namespace' => 'tungsedefault',
-	'channel' 	=> '',
+	'appId' 	 => 'APP_ID',
+	'appSecret'	 => 'APP_SECRET',
+	'appUrl'     => 'https://www.facebook.com/PAGE_NAME/app_APP_ID?',
+	'canvasUrl'  => 'https://apps.facebook.com/APP_NAME_SPACE',
+	'namespace'  => 'APP_NAME_SPACE',
+	'protocol'   => (isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) || isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') ? 'https://' : 'http://',
+	'hostname'   => $_SERVER['HTTP_HOST'],
+	'dirname'    => dirname($_SERVER['PHP_SELF']).'/',
+	'enviroment' => 'live',
 );

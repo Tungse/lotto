@@ -4,13 +4,13 @@ window.fbAsyncInit = function()
     {
         FB.init(
         {
-            appId  : appId,
-            status : true,
-            cookie : true,
+            appId: appId,
+            status: true,
+            cookie: true,
             xfbml:  true
         });
 
-        FB.Canvas.setSize({width:810, height:1200});   
+        FB.Canvas.setSize({width:810, height:900});   
         FB.Event.subscribe('edge.create', function(href, widget) 
         {
             FB.Canvas.setAutoGrow();  
