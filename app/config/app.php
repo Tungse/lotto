@@ -174,5 +174,7 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
 
 	),
-
+	'protocol' => (isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) || isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') ? 'https://' : 'http://',
+	'hostname' => $_SERVER['HTTP_HOST'],
+	'dirname'  => dirname($_SERVER['PHP_SELF']).'/',
 );

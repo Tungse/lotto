@@ -4,7 +4,7 @@ window.fbAsyncInit = function()
     {
         FB.init(
         {
-            appId: appId,
+            appId: setting.appId,
             status: true,
             cookie: true,
             xfbml:  true
@@ -21,17 +21,17 @@ window.fbAsyncInit = function()
 
 $(function()
 {
-	//if(redirect) window.top.location.href = appUrl; 
+	//if(setting.redirect) window.top.location.href = setting.tabAppUrl; 
 
     $(document).on('click','.button-to-NEXT_TEMPLATE', function()
     {
-        if(userId == '')
+        if(setting.userId == '')
         {
             FB.login(function(response)
             {
-                if(response && response.authResponse && response.authResponse.userID) window.location.href = dirname+'?a=NEXT_TEMPLATE&pageId='+pageId+'&userId='+response.authResponse.userID;
+                if(response && response.authResponse && response.authResponse.userID) window.location.href = setting.dirname+'?a=NEXT_TEMPLATE&pageId='+pageId+'&userId='+response.authResponse.userID;
             });
         }
-        else window.location.href = dirname+'?a=NEXT_TEMPLATE&pageId='+pageId+'&userId'+userId;
+        else window.location.href = setting.dirname+'?a=NEXT_TEMPLATE&pageId='+pageId+'&userId'+setting.userId;
     });
 });

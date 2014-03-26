@@ -4,12 +4,10 @@
 		<title>the backend</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="stylesheet" type="text/css" href="css/admin/index.css" />
-		<link rel="stylesheet" type="text/css" href="css/library/jquery-ui.css" />
 		<script>
-			var appId = "<?php echo Config::get('facebook.appId'); ?>";
+			
 		</script>
 		<script language="Javascript" type="text/Javascript" src="js/library/jquery.js"></script>
-		<script language="Javascript" type="text/Javascript" src="js/library/jquery-ui.js"></script>
 		<script language="Javascript" type="text/Javascript" src="js/admin/index.js"></script>
 	</head>
 	<body>

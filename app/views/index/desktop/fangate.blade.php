@@ -10,7 +10,10 @@
 		<link rel="stylesheet" type="text/css" href="css/index/desktop/fangate.css" />
 		<!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="css/ie.css" /><![endif]-->
 		<script>
-			var appId = "<?php echo Config::get('facebook.appId'); ?>";
+			var setting = 
+			{
+				"appId": "<?php echo Config::get('facebook.appId'); ?>"
+			}
 		</script>
 		<script language="Javascript" type="text/Javascript" src="js/library/jquery.js"></script>
 		<script language="Javascript" type="text/Javascript" src="js/common.js"></script>

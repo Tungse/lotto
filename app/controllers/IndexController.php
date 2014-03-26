@@ -1,29 +1,18 @@
 <?php
 
-require_once('../vendor/devicedetection/Mobile_Detect.php');
 require_once('../vendor/inputfilter/inputfilter.php');
 
 class IndexController extends BaseController 
 {
-	private $device;
-	private $liked;
-	private $redirect;
-
 	public function __construct()
 	{
 		parent::__construct();
 		
-		$mobile         = Input::get('mobile'); 
-		$detect         = new Mobile_Detect;
-		$this->device   = ($detect->isMobile() || (isset($mobile) && $mobile == true)) ? 'mobile' : 'desktop';
-		$this->redirect = (empty($this->pageId) && $this->device == 'desktop') ? true : false;
-		$this->liked    = (isset($this->signedRequest['page']) && isset($this->signedRequest['page']['liked'])) ? (bool)$this->signedRequest['page']['liked'] : true;	
-
+		$this->getDevice();
 		$this->appDataController();
 
 		View::share('pageId', $this->pageId);
 		View::share('userId', $this->userId);
-		View::share('redirect', $this->redirect);
 	}
 
 	public function actionController()
@@ -39,10 +28,10 @@ class IndexController extends BaseController
 		if(Config::get('facebook.enviroment') == 'live' || $this->device == 'mobile') return;
 
 		$this->liked = (isset($this->appData) && isset($this->appData->fangate)) ? false : true;
-		$deleteId    = (isset($this->appData) && isset($this->appData->delete)) ? $this->appData->delete : NULL;
-		$deleteId    = ($deleteId == 'me') ? $this->userId : $deleteId;
+		$userId      = (isset($this->appData) && isset($this->appData->delete)) ? $this->appData->delete : NULL;
+		$userId      = ($userId == 'me') ? $this->userId : $userId;
 
-		if(isset($deleteId) && !empty($deleteId)) $this->delete($deleteId);
+		if(isset($userId) && !empty($userId)) $this->delete($userId);
 	}
 
 	private function fangate()
@@ -52,27 +41,26 @@ class IndexController extends BaseController
 
 	private function welcome()
 	{
-		return View::make('index.'.$this->device.'.welcome', array('mobileFooterPopup' => $this->getMobileFooterPopup(), 'footer' => $this->footer()));
+		return View::make('index.'.$this->device.'.welcome', array
+		(
+			'redirect' => $this->getRedirect(),
+			'footer'   => $this->footer(),
+			'popup'    => $this->getMobileFooterPopup()
+		));
 	}
 
-	private function delete($userId = NULL)
+	private function delete($userId)
 	{
-		$userId = (isset($userId)) ? $userId : Input::get('userId');
 
-		if(empty($userId)) return;
 	}
 
 	private function footer()
 	{
-		return;
-
 		return View::make('index.'.$this->device.'.templates.footer');
 	}
 
 	private function getMobileFooterPopup()
 	{
-		return; 
-		
 		return ($this->device == 'mobile') ? View::make('index.mobile.templates.footer-popup') : NULL;
 	}
 }

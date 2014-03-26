@@ -1,5 +1,5 @@
 <div class="footer">
-	<fb:like href="<?php echo Config::get('facebook.protocol').Config::get('facebook.canvasUrl'); ?>" width="420" layout="button_count" action="like" show_faces="false" share="true"></fb:like>
+	<fb:like href="<?php echo Config::get('app.protocol').Config::get('facebook.canvasAppUrl'); ?>" width="420" layout="button_count" action="like" show_faces="false" share="true"></fb:like>
 	<div class="condition-and-privacy-holder">
 		<a id="popup-footer-condition-holder" class="button-to-popup" href="#"><?php echo Lang::get('content.condition'); ?></a> | <a id="popup-footer-privacy-holder" class="button-to-popup" href="#"><?php echo Lang::get('content.privacy'); ?></a>
 	</div>
