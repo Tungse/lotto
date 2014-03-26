@@ -52,7 +52,7 @@ class IndexController extends BaseController
 
 	private function welcome()
 	{
-		return View::make('index.'.$this->device.'.welcome', array('footerPopup' => $this->footerPopup(), 'footer' => $this->footer()));
+		return View::make('index.'.$this->device.'.welcome', array('mobileFooterPopup' => $this->getMobileFooterPopup(), 'footer' => $this->footer()));
 	}
 
 	private function delete($userId = NULL)
@@ -69,7 +69,7 @@ class IndexController extends BaseController
 		return View::make('index.'.$this->device.'.templates.footer');
 	}
 
-	private function footerPopup()
+	private function getMobileFooterPopup()
 	{
 		return; 
 		

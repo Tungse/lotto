@@ -24,7 +24,7 @@
 				
 			</div>
 			<div class="footer-holder"><?php echo $footer; ?></div>
-			<?php echo $footerPopup; ?>
+			<?php echo $mobileFooterPopup; ?>
 			<div class="layer">&nbsp;</div>
 		</div>
 		<div class="hidden"></div>
