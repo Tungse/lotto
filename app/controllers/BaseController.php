@@ -32,7 +32,7 @@ class BaseController extends Controller
 		$this->device = ($detect->isMobile() || (isset($mobile) && $mobile == true)) ? 'mobile' : 'desktop';
 	}
 
-	protected function getRedirect()
+	protected function getRedirectBoolean()
 	{
 		return (empty($this->pageId) && $this->device == 'desktop') ? true : false;
 	}
