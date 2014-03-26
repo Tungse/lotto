@@ -17,7 +17,7 @@
 		<!--[if lt IE 9]><link rel="stylesheet" type="text/css" href="css/ie.css" /><![endif]-->
 		<script>
 			var appId    = "<?php echo Config::get('facebook.appId'); ?>";
-			var appUrl   = "<?php echo Config::get('facebook.appUrl'); ?>";
+			var appUrl   = "<?php echo Config::get('facebook.protocol').Config::get('facebook.appUrl'); ?>";
 			var dirname  = "<?php echo Config::get('facebook.dirname'); ?>";
 			var userId   = "<?php echo $userId; ?>";
 			var pageId   = "<?php echo $pageId; ?>";
@@ -28,6 +28,7 @@
 		<script language="Javascript" type="text/Javascript" src="js/index/desktop/welcome.js"></script>
 	</head>
 	<body>
+		<div id="fb-root"></div>
 		<div class="wrapper">
 			<div class="welcome-holder">
 				
@@ -36,7 +37,6 @@
 			<div class="layer">&nbsp;</div>
 		</div>
 		<div class="hidden"></div>
-		<div id="fb-root"></div>
 		<script>
 			(function(d, s, id)
 			{

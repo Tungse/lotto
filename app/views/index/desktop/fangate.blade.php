@@ -17,12 +17,12 @@
 		<script language="Javascript" type="text/Javascript" src="js/index/desktop/fangate.js"></script>
 	</head>
 	<body>
+		<div id="fb-root"></div>
 		<div class="wrapper">
 			<div class="fangate-holder">&nbsp;</div>
 			<div class="footer-holder"><?php echo $footer; ?></div>
 			<div class="layer">&nbsp;</div>
 		</div>
-		<div id="fb-root"></div>
 		<script>
 			(function(d, s, id)
 			{

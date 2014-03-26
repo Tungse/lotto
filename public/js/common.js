@@ -17,4 +17,9 @@ $(function()
 		FB.Canvas.scrollTo(0,0);
 		$('html, body').animate({scrollTop: 0}, 200);
 	});
+
+	$(document).on('click', '.button-to-no-event', function(event)
+	{
+		event.preventDefault();
+	});
 });

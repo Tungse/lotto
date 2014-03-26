@@ -21,9 +21,9 @@ $(function()
         {
             FB.login(function(response)
             {
-                if(response && response.authResponse && response.authResponse.userID) window.location.href = dirname+'?a=NEXT_TEMPLATE&mobile=true';
+                if(response && response.authResponse && response.authResponse.userID) window.location.href = dirname+'?a=NEXT_TEMPLATE&mobile=true&userId='+response.authResponse.userID;
             });
         }
-        else window.location.href = dirname+'?a=NEXT_TEMPLATE&mobile=true';
+        else window.location.href = dirname+'?a=NEXT_TEMPLATE&mobile=true&userId='+userId;
     });
 });

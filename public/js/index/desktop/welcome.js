@@ -29,9 +29,9 @@ $(function()
         {
             FB.login(function(response)
             {
-                if(response && response.authResponse && response.authResponse.userID) window.location.href = dirname+'?a=NEXT_TEMPLATE&pageId='+pageId;
+                if(response && response.authResponse && response.authResponse.userID) window.location.href = dirname+'?a=NEXT_TEMPLATE&pageId='+pageId+'&userId='+response.authResponse.userID;
             });
         }
-        else window.location.href = dirname+'?a=NEXT_TEMPLATE&pageId='+pageId;
+        else window.location.href = dirname+'?a=NEXT_TEMPLATE&pageId='+pageId+'&userId'+userId;
     });
 });
