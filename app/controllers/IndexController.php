@@ -44,8 +44,8 @@ class IndexController extends BaseController
 		return View::make('index.'.$this->device.'.welcome', array
 		(
 			'footer'   => $this->footer(),
-			'popup'    => $this->getMobileFooterPopup()
-			'redirect' => $this->getRedirectBoolean(),
+			'popup'    => $this->getMobileFooterPopup(),
+			'redirect' => $this->getRedirectBoolean()
 		));
 	}
 
