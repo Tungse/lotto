@@ -1,0 +1,27 @@
+html
+{
+	width:810px;
+	height: 900px;
+	overflow:hidden;
+	margin:auto;
+}
+body
+{
+	margin:0px;
+}
+.wrapper
+{
+	position:relative;	
+	width: 810px;
+	font-family: Arial;
+	display:none;
+}
+.hidden
+{
+	display:none;
+}
+.button
+{
+	cursor:pointer;
+	position:absolute;
+}
