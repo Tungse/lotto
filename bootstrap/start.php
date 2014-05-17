@@ -26,10 +26,6 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-	'dev' => 'berlin01',
-	'staging' => 'CLOUDCONTROL-MYSQL-DATABASENAME*',
-	'live' => 'CLOUDCONTROL-MYSQL-DATABASENAME*',
-
 ));
 
 /*

@@ -1,7 +1,5 @@
 <?php
 
-header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
-
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
@@ -48,7 +46,5 @@ $app = require_once __DIR__.'/../bootstrap/start.php';
 | and wonderful application we have whipped up for them.
 |
 */
-
-App::forgetMiddleware('Illuminate\Http\FrameGuard');
 
 $app->run();

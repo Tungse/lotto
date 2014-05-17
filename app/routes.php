@@ -13,9 +13,3 @@
 
 Route::any('/', 'IndexController@actionController');
 Route::any('index', 'IndexController@actionController');
-Route::any('admin', 'AdminController@actionController');
-
-if(Config::get('facebook.enviroment') == 'live') App::error(function(Exception $exception) 
-{ 
-	return Redirect::to('/'); 
-});
