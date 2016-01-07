@@ -14,7 +14,6 @@ $(function()
 		$('.popup').fadeOut(0);
 		$('.layer, .'+popup).fadeIn(0);
 		
-		FB.Canvas.scrollTo(0,0);
 		$('html, body').animate({scrollTop: 0}, 200);
 	});
 
