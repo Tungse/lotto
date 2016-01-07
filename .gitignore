@@ -1,5 +1,5 @@
 .env.local.php
 .env.php
 .DS_Store
-.vendor
+/vendor
 Thumbs.db
